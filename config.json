@@ -1,0 +1,63 @@
+
+{
+    "physicalSolver":[
+        "Heat"
+    ],
+    "TotalTime": 10.0,
+    "TimeStep": 0.01,
+    "Iterations": 1000,
+    "outputInterval": 100,
+    "outputvtk": "./FEMVTK",
+    "outputcsv": "./output/",
+    "timeDependency": "transient",
+    "gridSize": {
+        "x": 100,
+        "y": 100,
+        "z": 100
+    },
+    "timeStep": 0.005,
+    "totalTime": 1.00,
+    "iterations": 5000,
+    "boundaryConditions": [
+        {
+            "name": "surface1",
+            "kind": "Heat",
+            "type": "Neumann",
+            "flux": 30.0
+        },
+        {
+            "name": "surface2",
+            "kind": "Heat",
+            "type": "Dirichlet",
+            "value": 0.0
+        },
+        {
+            "name": "surface3",
+            "kind": "Heat",
+            "type": "Dirichlet",
+            "value": 0.0
+        }
+    ],
+    "volumeProperties": [{
+        "name": "volume1",
+        "kind": "solid",
+        "material": "brick"
+    }],
+    "materialProperties":[
+        {
+        "name": "brick",
+        "kind": "solid",
+        "density": 1.0,
+        "specificHeat": 1.0,
+        "thermalConductivity": 1.0
+    },
+    {
+        "name": "air",
+        "kind": "fluid",
+        "density": 1.0,
+        "specificHeat": 1.0,
+        "thermalConductivity": 1.0
+    }
+    ]
+
+}
